@@ -1,0 +1,82 @@
+<!-- feita por augusto victro da silva ferreira fsn4 -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pagamento - AutoPeças Express</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">
+        <h1>AutoPeças<span>Express</span></h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="produtos.html">Produtos</a></li>
+          <li><a href="#contato" class="btn-contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-header">
+    <div class="container">
+      <h1>Finalizar Pagamento</h1>
+      <p>Revise seus dados e confirme sua compra</p>
+    </div>
+  </section>
+
+  <section class="container" style="padding: 60px 0;">
+    <form class="checkout-form" action="agradecimento.html" method="GET" style="max-width: 600px; margin: 0 auto;">
+      <h2>Resumo do Pedido</h2>
+      <p>Produto: <strong id="resumo-produto">Produto Genérico</strong></p>
+       <p>Valor: <strong id="resumo-preco">R$ 99,90</strong></p>
+      
+      <h2 style="margin-top: 40px;">Dados do Cliente</h2>
+      <label>Nome </label>
+      <input type="text" name="nome" placeholder="Digite seu nome" required />
+
+      <label>E-mail</label>
+      <input type="email" name="email" placeholder="Digite seu e-mail" required />
+
+      <label>Endereço de Entrega</label>
+      <input type="text" name="endereco" placeholder="Rua, número, bairro, cidade, estado" required />
+
+      <h2 style="margin-top: 40px;">Forma de Pagamento</h2>
+      <label><input type="radio" name="pagamento" checked /> Cartão de Crédito</label>
+      <label><input type="radio" name="pagamento" /> Boleto Bancário</label>
+      <label><input type="radio" name="pagamento" /> PIX</label>
+
+      <div style="margin-top: 30px;">
+        <button type="submit" class="btn">Confirmar Compra</button>
+      </div>
+    </form>
+  </section>
+
+  <footer id="contato">
+    <div class="container">
+      <p>&copy; 2025 AutoPeças Express. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const produto = params.get("produto");
+  const preco = params.get("preco");
+
+  if (produto) {
+    document.getElementById("resumo-produto").textContent = decodeURIComponent(produto);
+  }
+  if (preco) {
+    document.getElementById("resumo-preco").textContent = "R$ " + preco;
+  }
+
+</script>
+</body>
+</html>
