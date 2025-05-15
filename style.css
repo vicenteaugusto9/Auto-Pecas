@@ -997,30 +997,4 @@ address svg {
     .footer-grid {
         grid-template-columns: 1fr;
     }
-    .checkout-form {
-  background: white;
-  padding: 40px;
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow);
-}
-
-.checkout-form h2 {
-  margin-bottom: 20px;
-  font-size: 1.5rem;
-  font-weight: 600;
-}
-
-.checkout-form label {
-  display: block;
-  margin-top: 20px;
-  font-weight: 500;
-}
-
-.checkout-form input[type="text"],
-.checkout-form input[type="email"] {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid var(--gray-color);
-  border-radius: var(--border-radius);
-  margin-top: 5px;
 }
