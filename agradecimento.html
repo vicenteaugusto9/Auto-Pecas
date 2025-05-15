@@ -1,0 +1,54 @@
+<!-- feita por augusto victro da silva ferreira fsn4 -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Obrigado - AutoPeças Express</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">
+        <h1>AutoPeças<span>Express</span></h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="produtos.html">Produtos</a></li>
+          <li><a href="#contato" class="btn-contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="container" style="text-align: center; padding: 60px 20px;">
+    <h1 id="mensagem-agradecimento">Obrigado pela sua compra!</h1>
+    <p id="mensagem-detalhes"></p>
+    <p style="margin-top: 40px; font-weight: bold;">A satisfação do cliente é nossa missão.</p>
+    <a href="produtos.html" class="btn" style="margin-top: 30px; display: inline-block;">Voltar para os produtos</a>
+  </section>
+
+  <footer id="contato">
+    <div class="container">
+      <p>&copy; 2025 AutoPeças Express. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const nome = params.get("nome") || "Cliente";
+    const produto = params.get("produto") || "Produto";
+    const endereco = params.get("endereco") || "Endereço não informado";
+
+    document.getElementById("mensagem-agradecimento").textContent =
+      `Obrigado, ${nome}, pela sua compra!`;
+
+    document.getElementById("mensagem-detalhes").textContent =
+      `Seu produto será enviado em até 30 dias úteis para o endereço: ${endereco}.`;
+  </script>
+</body>
+</html>
